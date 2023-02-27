@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussniesLogicLayer.Interfaces
+namespace BussniesLogicLayer.Repositories
 {
-    public interface IGenericRepository <T> where T : class
+    internal class GenericRepository
     {
     }
 }
