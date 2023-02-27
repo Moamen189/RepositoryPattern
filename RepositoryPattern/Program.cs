@@ -1,3 +1,7 @@
+using BussniesLogicLayer.Models;
+
+
+
 using DataAccessLayer;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +13,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped(typeof(IGenericRepository<>) , typeof(GenericRepository);
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection") , 
     b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 var app = builder.Build();
