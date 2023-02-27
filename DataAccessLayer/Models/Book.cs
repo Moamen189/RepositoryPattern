@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussniesLogicLayer.Models
+namespace DataAccessLayer.Models
 {
     public class Book
     {

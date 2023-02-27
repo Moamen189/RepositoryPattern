@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussniesLogicLayer.Interfaces
+namespace BussniesLogicLayer.IRepository
 {
-    public interface IGenericRepository <T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
-        T GetById (int id);
+        T GetById(int id);
     }
 }

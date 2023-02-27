@@ -1,4 +1,4 @@
-﻿using BussniesLogicLayer.IRepository;
+﻿using BusniessLogicLayer.IRepository;
 using DataAccessLayer;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BussniesLogicLayer.Repositories
+namespace BusniessLogicLayer.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -18,7 +18,7 @@ namespace BussniesLogicLayer.Repositories
         }
         public T GetById(int id)
         {
-            return context?.Set<T>()?.Find(id);
+          return context.Set<T>().Find(id);
         }
     }
 }
