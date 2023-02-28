@@ -26,5 +26,12 @@ namespace RepositoryPattern.Controllers
         {
             return Ok(await authorRepository.GetByIdAsync(id));
         }
+
+
+        [HttpGet("GetAll")]
+        public IActionResult GetAll()
+        {
+            return Ok( authorRepository.GetAll());
+        }
     }
 }

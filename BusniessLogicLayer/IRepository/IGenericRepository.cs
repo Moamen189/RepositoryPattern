@@ -12,5 +12,7 @@ namespace BusniessLogicLayer.IRepository
 
         Task<T> GetByIdAsync(int id);
 
+        IEnumerable<T> GetAll();
+
     }
 }

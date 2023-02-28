@@ -16,6 +16,12 @@ namespace BusniessLogicLayer.Repositories
         {
             this.context = context;
         }
+
+        public IEnumerable<T> GetAll()
+        {
+            return context.Set<T>().ToList();
+        }
+
         public T GetById(int id)
         {
           return context.Set<T>().Find(id);
