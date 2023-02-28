@@ -1,5 +1,6 @@
 ﻿using BusniessLogicLayer.IRepository;
 using DataAccessLayer;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,7 +81,14 @@ namespace BusniessLogicLayer.Repositories
 
         public T Find(Expression<Func<T, bool>> criteria, string[] includes = null)
         {
-            return context.Set<T>().SingleOrDefault();
+            IQueryable<T> query = context.Set<T>();
+
+            if (includes != null)
+            {
+                foreach( var include in includes)
+                    query = query.Include(include);
+            }
+            return query.SingleOrDefault();
         }
 
         public IEnumerable<T> FindAll(Expression<Func<T, bool>> criteria, string[] includes = null)
