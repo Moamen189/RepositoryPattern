@@ -30,7 +30,14 @@ namespace RepositoryPattern.Controllers
         [HttpGet("GetAll")]
         public IActionResult GetAll()
         {
-            return Ok(authorRepository.GetAll());
+            return Ok(BookRepository.GetAll());
+        }
+
+
+        [HttpGet("GetName")]
+        public IActionResult GetName(string title)
+        {
+            return Ok(BookRepository.Find(b => b.Title == title));
         }
     }
 }

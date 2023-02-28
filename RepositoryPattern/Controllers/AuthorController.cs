@@ -33,5 +33,11 @@ namespace RepositoryPattern.Controllers
         {
             return Ok( authorRepository.GetAll());
         }
+
+        [HttpGet("GetName")]
+        public IActionResult GetName(string name)
+        {
+            return Ok(authorRepository.Find(b => b.Name == name));
+        }
     }
 }
