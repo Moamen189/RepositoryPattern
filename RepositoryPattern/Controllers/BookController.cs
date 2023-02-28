@@ -20,6 +20,12 @@ namespace RepositoryPattern.Controllers
         {
             return Ok(BookRepository.GetById(id));
         }
+
+        [HttpGet("GetByIdAsync")]
+        public async Task<IActionResult> GetByIdAsync(int id)
+        {
+            return Ok(await BookRepository.GetByIdAsync(id));
+        }
     }
 }
 

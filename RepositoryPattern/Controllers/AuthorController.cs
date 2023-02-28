@@ -20,5 +20,11 @@ namespace RepositoryPattern.Controllers
         {
             return Ok(authorRepository.GetById(id));
         }
+
+        [HttpGet("GetByIdAsync")]
+        public async Task<IActionResult>  GetByIdAsync(int id)
+        {
+            return Ok(await authorRepository.GetByIdAsync(id));
+        }
     }
 }
