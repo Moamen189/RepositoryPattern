@@ -20,5 +20,10 @@ namespace BusniessLogicLayer.Repositories
         {
           return context.Set<T>().Find(id);
         }
+
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await context.Set<T>().FindAsync(id);
+        }
     }
 }
